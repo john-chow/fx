@@ -61,6 +61,9 @@ Thank you to all the people who already contributed to fx!
         <a href="https://github.com/steventhanna" target="_blank">
             <img alt="andre2007" src="https://avatars1.githubusercontent.com/u/2541678?s=50&v=4" width="50">
         </a>
+        <a href="https://github.com/FrontMage" target="_blank">
+            <img alt="andre2007" src="https://avatars1.githubusercontent.com/u/17007026?s=460&v=4" width="50">
+        </a>
     </tr>
   </tbody>
 </table>
