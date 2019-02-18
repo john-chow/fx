@@ -1,26 +1,25 @@
 package docker_test
 
 import (
-	"os"
-	"os/exec"
 	"testing"
 
 	. "github.com/metrue/fx/pkg/docker"
-	"github.com/stretchr/testify/assert"
 )
 
-func TestInfo(t *testing.T) {
-	ok := IsRunning()
-	assert.Equal(t, true, ok)
-}
-
-func checkDocker() {
-	if err := exec.Command("docker", "info").Run(); err != nil {
-		panic(os.Stderr)
+func TestNew(t *testing.T) {
+	cli := New()
+	if cli == nil {
+		t.Fatal(cli)
 	}
-}
 
-func TestMain(m *testing.M) {
-	checkDocker()
-	m.Run()
+	ok := cli.IsRunning()
+	if !ok {
+		t.Fatal(ok)
+	}
+
+	ref := "metrue/snap"
+	_, err := cli.ListImagesWithReference(ref)
+	if err != nil {
+		t.Fatal(err)
+	}
 }
